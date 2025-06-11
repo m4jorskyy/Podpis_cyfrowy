@@ -1,4 +1,4 @@
-# TRNG Generator - True Random Number Generator
+# Podpis cyfrowy
 
 Zaawansowany generator prawdziwie losowych liczb z funkcją podpisywania cyfrowego, wykorzystujący jitter entropii systemowej oraz instrukcje sprzętowe x86. Implementacja bazuje na koncepcjach z publikacji naukowej LETRNG (Lightweight and Efficient True Random Number Generator for GNU/Linux Systems).
 
