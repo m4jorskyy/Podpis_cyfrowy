@@ -194,25 +194,9 @@ Oczekiwane wyniki:
 - **Chi-square**: p-value >0.01
 - **Kompresja**: <1% dla dobrych danych
 
-## Wkład w projekt
-
-1. **Fork** projektu
-2. Stwórz **feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit** zmiany (`git commit -m 'Add AmazingFeature'`)
-4. **Push** do brancha (`git push origin feature/AmazingFeature`)
-5. Otwórz **Pull Request**
-
 ## Licencja
 
 Projekt dostępny na licencji MIT. Zobacz plik `LICENSE` dla szczegółów.
-
-## Zgłaszanie błędów
-
-Jeśli znajdziesz błąd lub masz sugestię:
-
-1. Sprawdź czy błąd nie został już zgłoszony
-2. Otwórz nowy **Issue** z szczegółowym opisem
-3. Dołącz informacje o systemie i wersji
 
 ## Bibliografia i źródła
 
