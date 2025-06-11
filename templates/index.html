@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>TRNG Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Generator TRNG</h1>
+
+    <div id="loadingOverlay" class="loading-overlay"></div>
+
+    <div id="signingAlert" class="signing-alert">
+        Podpisywanie pliku, proszę czekać...
+    </div>
+
+    <script>
+        function showSigningAlert() {
+            document.getElementById('loadingOverlay').style.display = 'block';
+            document.getElementById('signingAlert').style.display = 'block';
+            const buttons = document.querySelectorAll('button[type="submit"]');
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+
+    {% if verification_result %}
+        <div class="verification {% if verification_color == 'green' %}verification-success{% elif verification_color == 'red' %}verification-error{% endif %}">
+            Weryfikacja podpisu: <strong>{{ verification_result }}</strong>
+        </div>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="messages">
+                {% for category, message in messages %}
+                    <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <h2>Podpisz plik</h2>
+    <form method="post" action="/sign" enctype="multipart/form-data" onsubmit="showSigningAlert()">
+        <label for="file_sign">Wybierz plik do podpisania:</label>
+        <input type="file" name="file" id="file_sign" required>
+        <button type="submit">Podpisz plik</button>
+    </form>
+
+    {% if signed_filename %}
+        <h2>Podpisany plik</h2>
+        <h3>Nazwa pliku: {{ signed_filename }}</h3>
+        <h3>Podpis (hex):</h3>
+        <textarea readonly>{{ signature }}</textarea>
+        <h3>Klucz publiczny (PEM):</h3>
+        <textarea readonly>{{ public_key }}</textarea>
+    {% endif %}
+
+    <h2>Weryfikacja podpisu</h2>
+    <form method="post" action="/verify" enctype="multipart/form-data">
+        <label for="file_verify">Wybierz plik do weryfikacji:</label>
+        <input type="file" name="file" id="file_verify" required>
+        <label for="signature_hex">Wklej podpis (hex):</label>
+        <textarea name="signature_hex" id="signature_hex" placeholder="Wklej podpis (hex)" required></textarea>
+        <label for="public_key_pem">Wklej klucz publiczny (PEM):</label>
+        <textarea name="public_key_pem" id="public_key_pem" placeholder="Wklej klucz publiczny (PEM)" required></textarea>
+        <button type="submit">Zweryfikuj podpis</button>
+    </form>
+</body>
+</html>
