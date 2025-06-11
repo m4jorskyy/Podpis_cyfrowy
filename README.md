@@ -194,10 +194,6 @@ Oczekiwane wyniki:
 - **Chi-square**: p-value >0.01
 - **Kompresja**: <1% dla dobrych danych
 
-## Licencja
-
-Projekt dostępny na licencji MIT. Zobacz plik `LICENSE` dla szczegółów.
-
 ## Bibliografia i źródła
 
 1. **LETRNG Research Paper**:
@@ -212,7 +208,12 @@ Projekt dostępny na licencji MIT. Zobacz plik `LICENSE` dla szczegółów.
    - Intel Digital Random Number Generator (DRNG) Software Implementation Guide
    - OpenSSL Cryptography and SSL/TLS Toolkit Documentation
 
-## Kontakt
+## Licencja
 
-- **Autor**: Igor Suchodolski
-- **Email**: igor.suchodolskii@gmail.com
+Projekt jest udostępniany na licencji MIT. Szczegóły w pliku [LICENSE](LICENSE).
+
+## Autor
+
+**Igor Suchodolski**
+- Email: [igor.suchodolskii@gmail.com](mailto:igor.suchodolskii@gmail.com)
+- GitHub: [@m4jorskyy](https://github.com/m4jorskyy)
