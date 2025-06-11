@@ -230,6 +230,5 @@ Jeśli znajdziesz błąd lub masz sugestię:
 
 ## Kontakt
 
-- **Autor**: [Twoje Imię]
-- **Email**: your.email@example.com
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **Autor**: Igor Suchodolski
+- **Email**: igor.suchodolskii@gmail.com
