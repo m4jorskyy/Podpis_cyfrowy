@@ -12,11 +12,11 @@
 #include <stdatomic.h>
 #include <sys/stat.h>
 
-#define BUFFER_SIZE (1 << 20)       // 1 MB
-#define JITTER_SAMPLES 512          // Liczba próbek jittera
-#define POOL_SIZE (JITTER_SAMPLES * sizeof(uint64_t)) // 4096 B
-#define NUM_COLLECTORS 4            // Liczba wątków zbierających
-#define TARGET_SIZE (13 * 1024 * 1024) // 13 MB
+#define BUFFER_SIZE (1 << 20) 
+#define JITTER_SAMPLES 512
+#define POOL_SIZE (JITTER_SAMPLES * sizeof(uint64_t))
+#define NUM_COLLECTORS 4      
+#define TARGET_SIZE (13 * 1024 * 1024)
 
 typedef struct {
     uint8_t buffer[BUFFER_SIZE];
@@ -215,10 +215,8 @@ int main() {
 
     fclose(state.source_output);
 
-    // Oblicz statystyki dla post.bin
     calculate_entropy("post.bin", "post_entropy.txt", "post_histogram.txt");
 
-    // Oblicz statystyki dla source.bin
     calculate_entropy("source.bin", "source_entropy.txt", "source_histogram.txt");
 
     printf("[SUKCES] Analiza zakończona\n");
